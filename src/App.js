@@ -13,7 +13,7 @@ function App() {
 
   return (
     <ChakraProvider>
-      <HashRouter basename="/advanced-react-portfolio-app">
+      <HashRouter basename="/">
         <AlertProvider>
           <main>
             <Header />
@@ -26,9 +26,9 @@ function App() {
           </main>
         </AlertProvider>
         <Routes>
-          <Route exact path="/" component={LandingSection} />
-          <Route path="/projects" component={ProjectsSection} />
-          <Route path="/contact-me" component={ContactMeSection} />
+          <Route path="/" />
+          <Route path="/projects" />
+          <Route path="/contact-me" />
         </Routes>
       </HashRouter>
     </ChakraProvider>
