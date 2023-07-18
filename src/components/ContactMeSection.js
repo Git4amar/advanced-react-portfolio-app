@@ -35,7 +35,7 @@ const LandingSection = () => {
       firstName: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
       type: Yup.string().oneOf(["hireMe", "openSource", "other"], "Invalid enquiry type"),
-      comment: Yup.string().required("Required")
+      comment: Yup.string().min(25, "Must be atleast 25 characters").required("Required")
     }),
   });
 

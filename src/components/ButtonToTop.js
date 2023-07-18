@@ -54,14 +54,14 @@ const ButtonToTop = () => {
                     as={motion.div}
                     position={{ base: "fixed", lg: "fixed" }}
                     right={{ base: 8, lg: 16 }}
-                    bottom={{ base: 16, lg: 16 }}
+                    bottom={{ base: 16 }}
                     whileHover={scrollYProgress > 20 ? { scale: 0.8, cursor: "pointer" } : { scale: 1, cursor: "not-allowed" }}
                     whileTap={scrollYProgress > 20 ? { scale: 0.8 } : { scale: 1, cursor: "not-allowed" }}
                     onMouseEnter={handleHover}
                     onMouseLeave={handleHover}
                     onTouchStart={handleHover}
                     onTouchEnd={handleHover}
-                    size={{ base: "64px", sm: "128px", lg: "128px" }}
+                    size={{ base: "64px", lg: "128px" }}
                     color="#512DA8DA"
                     capIsRound
                     thickness="8px"
@@ -73,7 +73,7 @@ const ButtonToTop = () => {
                         <FontAwesomeIcon id="button-to-top-icon" icon={faArrowTurnUp} size="2x" color="#512DA8" />
                     </CircularProgressLabel>
                     <AbsoluteCenter zIndex={-2}>
-                        <Circle position="relative" size={{ base: "64px", sm: "128px", lg: "128px" }} bg="#FFFFFFBA" />
+                        <Circle position="relative" size={{ base: "64px", lg: "128px" }} bg="#FFFFFFBA" />
                     </AbsoluteCenter>
                 </CircularProgress >
             </Link>
