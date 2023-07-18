@@ -19,9 +19,11 @@ const ButtonToTop = () => {
     const handleHover = e => {
         switch (e.type) {
             case "mouseenter":
+            case "touchstart":
                 scrollYProgress > 20 && buttonIcon.classList.add("fa-bounce");
                 break;
             case "mouseleave":
+            case "touchend":
                 buttonIcon.classList.remove("fa-bounce");
                 break;
         };
@@ -73,6 +75,8 @@ const ButtonToTop = () => {
                 whileTap={scrollYProgress > 20 ? { scale: 0.8 } : { scale: 1, cursor: "not-allowed" }}
                 onMouseEnter={handleHover}
                 onMouseLeave={handleHover}
+                onTouchStart={handleHover}
+                onTouchEnd={handleHover}
                 size={{ base: "64px", sm: "128px", lg: "128px" }}
                 color="#512DA8DA"
                 capIsRound

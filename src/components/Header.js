@@ -174,6 +174,7 @@ const Header = () => {
                         width: "100%",
                       }}
                       whileHover={{ top: "-100%" }}
+                      whileTap={{ top: "-100%" }}
                     >
                       <Center h={16} zIndex={-1} fontWeight="semibold" >{item.name}</Center>
                       <Center h={16} zIndex={-1} bg="#ffffff" borderRadius="24px 8px 16px 0" color="#512DA8" fontWeight="semibold" >{item.name}</Center>

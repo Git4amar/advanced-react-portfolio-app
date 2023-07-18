@@ -11,12 +11,15 @@ const Card = ({ title, description, imageSrc }) => {
 
   const hoverCard = e => {
     const cardImage = document.getElementById(`${title}-img`);
-    cardImage.style.transition = "transform 1s"
+    cardImage.style.transition = "transform 1s";
+    console.log(e.type);
     switch (e.type) {
       case "mouseenter":
+      case "touchstart":
         cardImage.style.transform = "scale(1.2)";
         break
       case "mouseleave":
+      case "touchend":
         cardImage.style.transform = "scale(1)";
         break
     }
@@ -35,6 +38,8 @@ const Card = ({ title, description, imageSrc }) => {
       _hover={{ cursor: "pointer", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}
       onMouseEnter={hoverCard}
       onMouseLeave={hoverCard}
+      onTouchStart={hoverCard}
+      onTouchEnd={hoverCard}
     >
 
       {/* <AspectRatio ratio={16 / 9} w="full"> */}
@@ -64,6 +69,7 @@ const Card = ({ title, description, imageSrc }) => {
           iconSpacing={2}
           variant="ghost"
           whileHover={{ gap: "16px", transition: { type: "spring", bounce: 0.5 } }}
+          whileTap={{ gap: "16px", transition: { type: "spring", bounce: 0.5 } }}
         >
           See more
         </Button>

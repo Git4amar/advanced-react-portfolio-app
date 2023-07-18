@@ -3,7 +3,8 @@ import { Avatar, Heading, Text, Box } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import { motion } from "framer-motion";
 
-const greeting = "Hello, I am Pete!";
+const avatarUserArray = [48, 47, 45, 44, 43, 38, 32, 31, 27, 26, 10, 9, 5, 1]
+const greeting = "Hello, I am Jane!";
 const bio1 = "A frontend developer";
 const bio2 = "specialized in React";
 
@@ -54,7 +55,7 @@ const LandingSection = () => {
         <Avatar
           as={motion.span}
           size={{ base: "2xl", sm: "xl", md: "2xl" }}
-          src="https://i.pravatar.cc/150?img=7"
+          src={"https://i.pravatar.cc/150?img=" + avatarUserArray[Math.floor(Math.random() * avatarUserArray.length)]}
           name="Pete"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
