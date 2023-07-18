@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/advanced-react-portfolio-app/static/css/main.df6a7eab.css",
-    "main.js": "/advanced-react-portfolio-app/static/js/main.d672caca.js",
+    "main.js": "/advanced-react-portfolio-app/static/js/main.1442f55b.js",
     "static/js/111.ad1cef69.chunk.js": "/advanced-react-portfolio-app/static/js/111.ad1cef69.chunk.js",
     "static/media/photo4.jpg": "/advanced-react-portfolio-app/static/media/photo4.4c7907d15dd9ea0be97c.jpg",
     "static/media/photo2.jpg": "/advanced-react-portfolio-app/static/media/photo2.7d510936625768642967.jpg",
@@ -9,11 +9,11 @@
     "static/media/photo1.jpg": "/advanced-react-portfolio-app/static/media/photo1.76b22eb753ddc88e0626.jpg",
     "index.html": "/advanced-react-portfolio-app/index.html",
     "main.df6a7eab.css.map": "/advanced-react-portfolio-app/static/css/main.df6a7eab.css.map",
-    "main.d672caca.js.map": "/advanced-react-portfolio-app/static/js/main.d672caca.js.map",
+    "main.1442f55b.js.map": "/advanced-react-portfolio-app/static/js/main.1442f55b.js.map",
     "111.ad1cef69.chunk.js.map": "/advanced-react-portfolio-app/static/js/111.ad1cef69.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.df6a7eab.css",
-    "static/js/main.d672caca.js"
+    "static/js/main.1442f55b.js"
   ]
 }
