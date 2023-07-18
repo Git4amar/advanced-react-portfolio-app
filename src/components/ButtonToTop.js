@@ -1,14 +1,13 @@
-import { AbsoluteCenter, Box, Circle, CircularProgress, CircularProgressLabel, scroll } from "@chakra-ui/react"
+import { AbsoluteCenter, Circle, CircularProgress, CircularProgressLabel } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnUp } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ButtonToTop = () => {
 
     const [scrollYProgress, setScrollYProgress] = React.useState(0.1);
-
-    const [repoName, setRepoName] = React.useState(null)
 
     const buttonIcon = document.getElementById("button-to-top-icon");
 
@@ -33,23 +32,23 @@ const ButtonToTop = () => {
 
     const handleClick = e => {
         if (scrollYProgress > 20) {
-            const goToSection = () => {
-                var section = null;
-                switch (window.location.hash) {
-                    case "#projects":
-                        section = "landing";
-                        break;
-                    case "#contact-me":
-                        section = "projects";
-                        break;
-                    default:
-                        section = "landing"
-                };
-                return section + "-" + "section";
-            };
-            const scrollToSection = goToSection();
-            scrollToSection === "projects-section" && window.history.replaceState(null, "", "/#projects");
-            document.getElementById(scrollToSection).scrollIntoView({
+            // const goToSection = () => {
+            //     var section = null;
+            //     switch (window.location.hash) {
+            //         case "#projects":
+            //             section = "landing";
+            //             break;
+            //         case "#contact-me":
+            //             section = "projects";
+            //             break;
+            //         default:
+            //             section = "landing"
+            //     };
+            //     return section + "-" + "section";
+            // };
+            // const scrollToSection = goToSection();
+            // scrollToSection === "projects-section" && window.history.replaceState(null, "", "/#projects");
+            document.getElementById("landing-section").scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
@@ -61,42 +60,44 @@ const ButtonToTop = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    React.useEffect(() => {
-        window.location.pathname ? setRepoName(window.location.pathname) : setRepoName("/");
-    }, [])
+    // React.useEffect(() => {
+    //     window.location.pathname ? setRepoName(window.location.pathname) : setRepoName("/");
+    // }, [])
 
-    React.useEffect(() => {
-        scrollYProgress <= 5 && window.history.replaceState(null, "", repoName);
-    }, [scrollYProgress > 5, repoName])
+    // React.useEffect(() => {
+    //     scrollYProgress <= 5 && window.history.replaceState(null, "", repoName);
+    // }, [scrollYProgress > 5, repoName])
 
     return (
         <>
-            <CircularProgress
-                as={motion.div}
-                position={{ base: "fixed", lg: "fixed" }}
-                right={{ base: 8, lg: 16 }}
-                bottom={{ base: 16, lg: 16 }}
-                whileHover={scrollYProgress > 20 ? { scale: 0.8, cursor: "pointer" } : { scale: 1, cursor: "not-allowed" }}
-                whileTap={scrollYProgress > 20 ? { scale: 0.8 } : { scale: 1, cursor: "not-allowed" }}
-                onMouseEnter={handleHover}
-                onMouseLeave={handleHover}
-                onTouchStart={handleHover}
-                onTouchEnd={handleHover}
-                size={{ base: "64px", sm: "128px", lg: "128px" }}
-                color="#512DA8DA"
-                capIsRound
-                thickness="8px"
-                value={scrollYProgress}
-                zIndex="docked"
-                onClick={handleClick}
-            >
-                <CircularProgressLabel zIndex={5}>
-                    <FontAwesomeIcon id="button-to-top-icon" icon={faArrowTurnUp} size="2x" color="#512DA8" />
-                </CircularProgressLabel>
-                <AbsoluteCenter zIndex={-2}>
-                    <Circle position="relative" size={{ base: "64px", sm: "128px", lg: "128px" }} bg="#FFFFFFBA" />
-                </AbsoluteCenter>
-            </CircularProgress >
+            <Link to="/">
+                <CircularProgress
+                    as={motion.div}
+                    position={{ base: "fixed", lg: "fixed" }}
+                    right={{ base: 8, lg: 16 }}
+                    bottom={{ base: 16, lg: 16 }}
+                    whileHover={scrollYProgress > 20 ? { scale: 0.8, cursor: "pointer" } : { scale: 1, cursor: "not-allowed" }}
+                    whileTap={scrollYProgress > 20 ? { scale: 0.8 } : { scale: 1, cursor: "not-allowed" }}
+                    onMouseEnter={handleHover}
+                    onMouseLeave={handleHover}
+                    onTouchStart={handleHover}
+                    onTouchEnd={handleHover}
+                    size={{ base: "64px", sm: "128px", lg: "128px" }}
+                    color="#512DA8DA"
+                    capIsRound
+                    thickness="8px"
+                    value={scrollYProgress}
+                    zIndex="docked"
+                    onClick={handleClick}
+                >
+                    <CircularProgressLabel zIndex={5}>
+                        <FontAwesomeIcon id="button-to-top-icon" icon={faArrowTurnUp} size="2x" color="#512DA8" />
+                    </CircularProgressLabel>
+                    <AbsoluteCenter zIndex={-2}>
+                        <Circle position="relative" size={{ base: "64px", sm: "128px", lg: "128px" }} bg="#FFFFFFBA" />
+                    </AbsoluteCenter>
+                </CircularProgress >
+            </Link>
         </>
     )
 }

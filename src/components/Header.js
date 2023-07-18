@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, Center, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const socials = [
   {
@@ -36,12 +37,12 @@ const socials = [
 const navItems = [
   {
     name: "Projects",
-    url: "/#projects",
+    url: "/projects",
     data: "projects"
   },
   {
     name: "Contact Me",
-    url: "/#contact-me",
+    url: "/contact-me",
     data: "contactme"
   }
 ]
@@ -49,6 +50,7 @@ const navItems = [
 const Header = () => {
 
   const handleClick = (anchor) => {
+    // anchor.preventDefault();
     anchor = anchor.target.parentNode.dataset.toSection;
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -153,9 +155,10 @@ const Header = () => {
             <Stack direction="row" spacing={0}>
               {navItems.map(item => {
                 return (
-                  <a
+                  <Link
                     key={item.url}
                     href={item.url}
+                    to={item.url}
                     data-to-section={item.data}
                     onClick={handleClick}
                     style={{
@@ -179,7 +182,7 @@ const Header = () => {
                       <Center h={16} zIndex={-1} fontWeight="semibold" >{item.name}</Center>
                       <Center h={16} zIndex={-1} bg="#ffffff" borderRadius="24px 8px 16px 0" color="#512DA8" fontWeight="semibold" >{item.name}</Center>
                     </motion.div>
-                  </a>
+                  </Link>
                 );
               })}
             </Stack>
