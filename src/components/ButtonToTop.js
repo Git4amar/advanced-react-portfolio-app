@@ -32,23 +32,10 @@ const ButtonToTop = () => {
 
     const handleClick = e => {
         if (scrollYProgress > 20) {
-            // const goToSection = () => {
-            //     var section = null;
-            //     switch (window.location.hash) {
-            //         case "#projects":
-            //             section = "landing";
-            //             break;
-            //         case "#contact-me":
-            //             section = "projects";
-            //             break;
-            //         default:
-            //             section = "landing"
-            //     };
-            //     return section + "-" + "section";
-            // };
-            // const scrollToSection = goToSection();
-            // scrollToSection === "projects-section" && window.history.replaceState(null, "", "/#projects");
-            document.getElementById("landing-section").scrollIntoView({
+            const scrollToSection = window.location.hash.includes("contact-me")
+                ? "projects-section"
+                : "landing-section";
+            document.getElementById(scrollToSection).scrollIntoView({
                 behavior: "smooth",
                 block: "start",
             });
@@ -60,17 +47,9 @@ const ButtonToTop = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // React.useEffect(() => {
-    //     window.location.pathname ? setRepoName(window.location.pathname) : setRepoName("/");
-    // }, [])
-
-    // React.useEffect(() => {
-    //     scrollYProgress <= 5 && window.history.replaceState(null, "", repoName);
-    // }, [scrollYProgress > 5, repoName])
-
     return (
         <>
-            <Link to="/">
+            <Link to={window.location.hash.includes("contact-me") ? "/projects" : "/"} >
                 <CircularProgress
                     as={motion.div}
                     position={{ base: "fixed", lg: "fixed" }}
