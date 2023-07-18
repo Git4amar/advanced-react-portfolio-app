@@ -9,7 +9,7 @@ const Footer = () => {
           margin="0 auto"
           px={12}
           color="white"
-          justifyContent="center"
+          justifyContent="space-around"
           alignItems="center"
           maxWidth="1024px"
           height={16}
