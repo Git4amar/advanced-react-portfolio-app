@@ -67,7 +67,7 @@ const Header = () => {
 
   const handleScroll = () => {
     headerBox.current.style.transition = "transform 0.3s ease-in-out 0s";
-    if (window.scrollY - prevScrollPosition.current > 0) {
+    if (window.scrollY > "64" && window.scrollY - prevScrollPosition.current > 0) {
       headerBox.current.style.transform = "translate(0px, -200px)";
     }
     else {
