@@ -16,7 +16,6 @@
     "@testing-library/user-event": "^13.5.0",
     "formik": "^2.2.9",
     "framer-motion": "^7.3.5",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -44,7 +43,8 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "prettier": "^2.7.1"
   },
-  "homepage": "https://git4amar.github.io/advanced-react-portfolio-app"
+  "homepage": "https://git4amar.github.io/advanced-react-portfolio-app/"
 }
