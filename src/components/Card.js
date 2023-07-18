@@ -12,7 +12,6 @@ const Card = ({ title, description, imageSrc }) => {
   const hoverCard = e => {
     const cardImage = document.getElementById(`${title}-img`);
     cardImage.style.transition = "transform 1s";
-    console.log(e.type);
     switch (e.type) {
       case "mouseenter":
       case "touchstart":

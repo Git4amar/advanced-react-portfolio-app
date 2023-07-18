@@ -8,6 +8,8 @@ const ButtonToTop = () => {
 
     const [scrollYProgress, setScrollYProgress] = React.useState(0.1);
 
+    const [repoName, setRepoName] = React.useState(null)
+
     const buttonIcon = document.getElementById("button-to-top-icon");
 
     const handleScroll = () => {
@@ -46,7 +48,6 @@ const ButtonToTop = () => {
                 return section + "-" + "section";
             };
             const scrollToSection = goToSection();
-            scrollToSection === "landing-section" && window.history.replaceState(null, "", "/");
             scrollToSection === "projects-section" && window.history.replaceState(null, "", "/#projects");
             document.getElementById(scrollToSection).scrollIntoView({
                 behavior: "smooth",
@@ -61,8 +62,12 @@ const ButtonToTop = () => {
     }, []);
 
     React.useEffect(() => {
-        scrollYProgress <= 5 && window.history.replaceState(null, "", "/");
-    }, [scrollYProgress > 5])
+        window.location.pathname ? setRepoName(window.location.pathname) : setRepoName("/");
+    }, [])
+
+    React.useEffect(() => {
+        scrollYProgress <= 5 && window.history.replaceState(null, "", repoName);
+    }, [scrollYProgress > 5, repoName])
 
     return (
         <>
