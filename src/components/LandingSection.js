@@ -55,8 +55,12 @@ const LandingSection = () => {
         <Avatar
           as={motion.span}
           size={{ base: "2xl", sm: "xl", md: "2xl" }}
-          src={"https://i.pravatar.cc/150?img=" + avatarUserArray[Math.floor(Math.random() * avatarUserArray.length)]}
-          name="Pete"
+          src={
+            "https://i.pravatar.cc/150?img="
+            +
+            avatarUserArray[Math.floor(Math.random() * (avatarUserArray.length))]
+          }
+          name="Jane"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
         />
