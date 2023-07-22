@@ -15,6 +15,7 @@ const ButtonToTop = () => {
         const scrollHeight = (document.documentElement.scrollHeight - document.documentElement.clientHeight);
         const progress = (window.scrollY / scrollHeight) * 100;
         setScrollYProgress(progress === 0 ? 0.1 : progress);
+        buttonIcon.classList.remove("fa-bounce");
     };
 
     const handleHover = e => {
